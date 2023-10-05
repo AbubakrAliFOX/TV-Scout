@@ -42,40 +42,77 @@ nav {
     outline: none;
 }
 
-div {
-    display: inline;
+.search-category {
+    padding-left: 6px;
+    border-left: 4px solid #3F00FF;
+    line-height: 1.9rem;
 }
 
-body {
-    text-align: center;
+.display-area {
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 10px;
+    margin-left: 2px;
 }
+
 
 .tvCard {
-    margin: 12px;
-    padding: 10px;
-    border: 2px rgb(22, 22, 20) solid;
+    margin: 12px ;
+    max-width: 225px;
+    padding: 0px;
+    /* border: 2px rgb(22, 22, 20) solid; */
     text-align: center;
     overflow: hidden;
     transition: 500ms all;
+    
 
 }
 
-.tvCard:hover {
-    background-color: rgb(227, 227, 213);
+.element-with-overlay {
+    position: relative;
+    max-width: 225px;
+    max-height: 330px;
+    
+    
 }
 
-/* img {
-    max-width: 295px;
-    max-height: 300px;
-} */
-
-#submitButton {
-    margin-top: 10px;
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Transparent background by default */
+    opacity: 0; /* Start with opacity 0 (fully transparent) */
+    transition: opacity 0.3s ease-in-out; /* Add a smooth transition effect */
+    border-radius: 20px;
 }
 
-h3 {
-    margin-top: 5px;
-    margin-bottom: 0;
-    font-size: 1.6rem;
+.element-with-overlay:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background color */
+    opacity: 1; /* Full opacity on hover */
 }
 
+.element-with-overlay:hover .search-icon {
+    display: inline;
+    
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+img {
+    width: 225px;
+    height: 330px;
+    border-radius: 20px;
+}
+
+.show-name {
+    margin-top: 7px;
+    text-decoration: none;
+    color: #333;
+}

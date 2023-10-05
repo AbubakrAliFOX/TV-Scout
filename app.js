@@ -5,7 +5,6 @@ const ejs = require('ejs');
 const ejsMate = require('ejs-mate');
 const axios = require('axios');
 
-
 app.engine('ejs', ejsMate)
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -16,11 +15,11 @@ app.get('/', (req, res) => {
     res.render('home');
 })
 
-app.post('/search', async (req, res) => {
-    const {searchTerm} = req.body;
+app.get('/search', async (req, res) => {
+    const {searchTerm} = req.query;
     const search = await axios.get(`https://api.tvmaze.com/search/shows?q=${searchTerm}`);
     const searchResult = search.data;
-
+    // console.log(searchResult[0].show);
     res.render('index', {searchResult})
 })
 
