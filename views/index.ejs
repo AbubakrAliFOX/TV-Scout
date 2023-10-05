@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate') %>
+<%- include('partials/navbar') %>
+<!-- <h1> <%= searchResult[0].score %></h1> -->
+
+
+<section class="tvDisplay container text-center">
+    <div class="row justify-content-center">
+        <% for(let show of searchResult) { %>
+                <div class="tvCard rounded-2 col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <img class="rounded-3" src="<%= show.show.image ? show.show.image.medium: "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg" %>" alt="dsa" sizes="" srcset="">
+                    <h3><%= show.show.name %></h3>
+                    <h4><%= show.show.premiered ? show.show.premiered.slice(0,4): " " %></h4>
+                    <p class="genre">Genre: Action</p>
+                    <p class="rating">Rating: 9/10</p>
+                    <a class="btn btn-outline-info" target="_blank"
+                        href="https://getbootstrap.com/docs/5.3/content/typography/">Visit
+                        Page</a>
+                </div>
+        <% } %>
+    </div>
+</section>
+

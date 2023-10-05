@@ -1,0 +1,36 @@
+div {
+    display: inline;
+}
+
+body {
+    text-align: center;
+}
+
+.tvCard {
+    margin: 12px;
+    padding: 10px;
+    border: 2px rgb(22, 22, 20) solid;
+    text-align: center;
+    overflow: hidden;
+    transition: 500ms all;
+
+}
+
+.tvCard:hover {
+    background-color: rgb(227, 227, 213);
+}
+
+/* img {
+    max-width: 295px;
+    max-height: 300px;
+} */
+
+#submitButton {
+    margin-top: 10px;
+}
+
+h3 {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 1.6rem;
+}
