@@ -20,7 +20,7 @@ app.post('/search', async (req, res) => {
     const {searchTerm} = req.body;
     const search = await axios.get(`https://api.tvmaze.com/search/shows?q=${searchTerm}`);
     const searchResult = search.data;
-    
+
     res.render('index', {searchResult})
 })
 
