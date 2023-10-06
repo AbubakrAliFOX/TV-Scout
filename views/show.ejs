@@ -1,0 +1,26 @@
+<% layout('layouts/boilerplate') %>
+<%- include('partials/navbar') %>
+
+<section id="page">
+    <section class="container">
+        <div id="hero">
+            <div id="title-header" class="d-lg-flex bd-highlight">
+                <h1><%= showData.name %> </h1>
+                <meter class="average-rating ms-auto" min="0" max="5" value="4.3" title="4.3 out of 5 stars">4.3 out of 5</meter>
+            </div>
+            <div class="d-flex flex-row bd-highlight mb-3">
+                <h4><%= showData.premiered? showData.premiered.slice(0, 4) + ' ': '' %><%= showData.ended? `- ${showData.ended.slice(0, 4)}`: '' %></h4>
+                <h4><%= showData.averageRuntime? `${showData.averageRuntime}m`: '' %></h4>
+            </div>
+            <div id="photo-trailer" class="row">
+                <img class="hero-image col-lg-3 col-md-12" src="https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg" alt="dsa" sizes="" srcset="">
+                <iframe class="col-lg-9 col-md-12" src="https://www.youtube.com/embed/<%= videoId  %>?si=Oy2_wpVn2WYRU8xw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <!-- <div id="more-videos" class="col-lg-1 col-md-12"></div> -->
+            </div>
+        </div>
+    </section>
+</section>
+
+<section class="page2">
+<h1>What is this</h1>
+</section>

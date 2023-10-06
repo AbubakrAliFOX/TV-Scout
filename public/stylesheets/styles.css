@@ -71,8 +71,6 @@ nav {
     position: relative;
     max-width: 225px;
     max-height: 330px;
-    
-    
 }
 
 .overlay {
@@ -105,7 +103,7 @@ nav {
     display: none;
 }
 
-img {
+.search-image {
     width: 225px;
     height: 330px;
     border-radius: 20px;
@@ -115,4 +113,51 @@ img {
     margin-top: 7px;
     text-decoration: none;
     color: #333;
+}
+
+
+/* Show / Movie Display page */
+
+#page {
+    height: 100vh;
+    width: 100vw;
+    background: rgb(0,0,0);
+    background: linear-gradient(320deg, rgba(0,0,0,1) 0%, rgba(255,192,0,1) 100%);
+}
+
+#title-header {
+    padding-top: 20px;
+}
+
+.average-rating {
+    position: relative;
+    appearance: none;
+    color: transparent;
+    width: auto;
+    display: inline-block;
+    vertical-align: baseline;
+    font-size: 35px;
+}
+  
+.average-rating::before {
+    --percent: calc(2/5*100%);
+    content: '★★★★★';
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgba(0,0,0,0.2);
+    background: linear-gradient(90deg, gold var(--percent), rgba(0,0,0,0.2) var(--percent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.hero-image {
+    max-width: 330px;
+    max-height: 475px;
+    /* border-radius: 20px; */
+}
+
+#more-videos {
+    background-color: #333;
 }
