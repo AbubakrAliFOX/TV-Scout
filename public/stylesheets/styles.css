@@ -123,6 +123,7 @@ nav {
     width: 100vw; */
     background: rgb(0,0,0);
     background: linear-gradient(320deg, rgba(0,0,0,1) 0%, rgba(255,192,0,1) 100%);
+    padding-bottom: 2rem;
 }
 
 #title-header {
@@ -183,6 +184,10 @@ h3 svg {
     padding: 0;
 }
 
+#cast {
+    margin-left: 0;
+}
+
 .cast-person {
     display: inline-block;
     padding: 0;
@@ -200,4 +205,99 @@ h3 svg {
     width: 130px;
     height:  130px;
     border-radius: 50px;
+}
+
+.episodes-list {
+    position: relative;
+
+}
+
+.episode-airdate {
+    font-size: 0.93rem;
+}
+
+/* .episode:nth-of-type(even) {
+    background-color: #cfe2ff;
+}  */
+
+
+#carousel img {
+    max-width: 1000px;
+    max-height: 500px;
+}
+
+.crew {
+    border-top: 1px white solid;
+    padding-top: 10px;
+}
+
+#crew {
+    margin-right: 10px;
+}
+
+.crew-member {
+    margin-right: 10px;
+    
+}
+
+.crew-member a {
+    text-decoration: none;
+    color: white;
+}
+
+.crew-member a:hover {
+    color: rgb(228, 215, 215);
+}
+
+.dot {
+    text-align: center; /* Center-align the text within the paragraph */
+    line-height: 30px;
+    margin-right: 10px;
+}
+
+
+
+
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+footer div {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+font-size: 14px;
+margin: 0;
+}
+
+/* Style the navigation links */
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer li {
+    display: inline;
+    margin-right: 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ff9800;
 }

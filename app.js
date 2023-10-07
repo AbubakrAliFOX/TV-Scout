@@ -24,13 +24,30 @@ app.get('/search', async (req, res) => {
 
 app.get('/show/:id', async (req, res) => {
     const {id} = req.params;
-    const show = await axios.get(`https://api.tvmaze.com/shows/${id}?embed=cast`);
-    // const cast = await axios.get(`https://api.tvmaze.com/shows/${id}/cast`);
+    const show = await axios.get(`https://api.tvmaze.com/shows/${id}?embed[]=cast&embed[]=images&embed[]=crew&embed[]=seasons&embed[]=episodes`);
+    // const images = await axios.get(`https://api.tvmaze.com/shows/${id}/images`);
+    // const crew = await axios.get(`https://api.tvmaze.com/shows/${id}/crew`);
     const showData = show.data;
     const castData = showData._embedded.cast;
+    const seasonsData = showData._embedded.seasons;
+    const episodesData = showData._embedded.episodes;
+    let imgData = [], crewData=[];
+    // refactor function later
+    for (image of show.data._embedded.images) {
+      if (image.type == 'background') {
+        imgData.push(image);
+      }
+    }
+    // refactor function later
+    for (member of show.data._embedded.crew) {
+      if (member.type == 'Creator' || member.type == 'Executive Producer') {
+        crewData.push(member);
+      }
+    }
+
     // const videoId = await lookForVideo(showData.name);
     // for the summary (for some reason, the API has the summary text wrapped inside of a p element :-( ))
-    res.render('show', {showData, castData});
+    res.render('show', {showData, castData, imgData, crewData, seasonsData, episodesData});
     // videoId
 })
 
