@@ -119,8 +119,8 @@ nav {
 /* Show / Movie Display page */
 
 #page {
-    height: 100vh;
-    width: 100vw;
+    /* height: 100vh;
+    width: 100vw; */
     background: rgb(0,0,0);
     background: linear-gradient(320deg, rgba(0,0,0,1) 0%, rgba(255,192,0,1) 100%);
 }
@@ -160,4 +160,44 @@ nav {
 
 #more-videos {
     background-color: #333;
+}
+
+
+.genres-buttons {
+    background: none;
+    border-radius: 30px;
+    outline: none;
+    border: 1px solid white;
+    font-size: 0.9rem;
+    padding: 4px 10px;
+    color: white;
+}
+
+.genres-buttons:hover {
+    background-color: rgba(255, 255, 255, 0.215);
+}
+
+h3 svg {
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cast-person {
+    display: inline-block;
+    padding: 0;
+    border: 0;
+    transition: 0.3s all ease-in-out;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.cast-person:hover {
+    background-color: #e6e6ef;
+}
+
+.cast-person img {
+    width: 130px;
+    height:  130px;
+    border-radius: 50px;
 }

@@ -1,6 +1,7 @@
 <% layout('layouts/boilerplate') %>
 <%- include('partials/navbar') %>
 
+
 <section id="page">
     <section class="container">
         <div id="hero">
@@ -14,13 +15,72 @@
             </div>
             <div id="photo-trailer" class="row">
                 <img class="hero-image col-lg-3 col-md-12" src="https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg" alt="dsa" sizes="" srcset="">
-                <iframe class="col-lg-9 col-md-12" src="https://www.youtube.com/embed/<%= videoId  %>?si=Oy2_wpVn2WYRU8xw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <!-- <div id="more-videos" class="col-lg-1 col-md-12"></div> -->
+                <iframe class="col-lg-8 col-md-12" src="https://www.youtube.com/embed/<%= //videoId %>?si=aYWrhBgB11BjOw4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div  class="col-lg-1 col-md-12"></div>
+                <!-- videoId -->
             </div>
+            <% if (showData.genres) { %>
+                <div class="mt-3">
+                    <% for( let genre of showData.genres ) { %>
+                        <button class="genres-buttons me-1"><%= genre %></button>
+                    <% } %>
+                </div>
+            <% } %>
+            <div>
+                <%function cleanedSummary (summary) {   %>
+                <%    let cleanSummary = [];%>
+                <%    for(let word of summary.split(' ')) {%>
+                <%        let iStart = word.indexOf('<');%>
+                <%        let iEnd = word.indexOf('>');%>
+                <%        if (iStart !== -1) {%>
+                <%            // we split the letters into an array, because 'splice' doesn't work on string.%>
+                <%            let arrayOfLetters = word.split('');%>
+                <%            word = arrayOfLetters;%>
+                <%            // remember that splice returns the removed items and that it mutates the array. We will utilize this by only calling it and then using the mutated array.%>
+                <%            word.splice(iStart, iEnd +1);%>
+                <%            word = word.join('');%>
+                <%        }%>
+                <%        cleanSummary.push(word);%>
+                <%    }%>
+                <%    return cleanSummary.join(' ');%>
+                <%}%>
+                <h5 class="col-lg-7 text-white mt-3 pb-3 fw-light"><%= cleanedSummary(showData.summary) %></h5>
+            </div>
+            
         </div>
     </section>
 </section>
 
-<section class="page2">
-<h1>What is this</h1>
+<section id="page2">
+    <section class="container">
+        <!-- cast -->
+        <section class="container-fluid">
+            <section class="row">
+                <div id="cast" class="col-lg-9 row">
+                    <h3>Cast <svg width="81px" height="81px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ff0000" stroke-width="2.832"></g><g id="SVGRepo_iconCarrier"> <g id="Arrow / Caret_Right_SM"> <path id="Vector" d="M11 9L14 12L11 15" stroke="#ffea00" stroke-width="1.6320000000000001" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg></h3>
+                    <% for( i = 0; i <= 5; i++) { %>
+                        <% if (castData[i].person && castData[i].character) { %>
+                            <div class="cast-person card col-4 mb-4">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                      <img src="<%= castData[i].person.image? castData[i].person.image.original: 'https://imagedelivery.net/5MYSbk45M80qAwecrlKzdQ/49d53747-1189-4811-d83b-4fadcb1dad00/thumbnail?v=2023082806'  %>" class="img-fluid" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                      <div class="card-body">
+                                        <p class="card-text fw-bold"><%= castData[i].person.name %></p>
+                                        <p class="card-text"><%= castData[i].character.name %></p>
+                                      </div>
+                                    </div>
+                                  </div>                        
+                            </div>
+                        <% } %>
+                    <% } %>
+                </div>
+                <div class="col-lg-3">
+                    <h3>Episodes</h3>
+                </div>
+            </section>
+        </section>
+    </section>
 </section>
+

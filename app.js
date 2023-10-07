@@ -24,10 +24,14 @@ app.get('/search', async (req, res) => {
 
 app.get('/show/:id', async (req, res) => {
     const {id} = req.params;
-    const show = await axios.get(`https://api.tvmaze.com/shows/${id}`);
+    const show = await axios.get(`https://api.tvmaze.com/shows/${id}?embed=cast`);
+    // const cast = await axios.get(`https://api.tvmaze.com/shows/${id}/cast`);
     const showData = show.data;
-    const videoId = await lookForVideo(showData.name);
-    res.render('show', {showData, videoId});
+    const castData = showData._embedded.cast;
+    // const videoId = await lookForVideo(showData.name);
+    // for the summary (for some reason, the API has the summary text wrapped inside of a p element :-( ))
+    res.render('show', {showData, castData});
+    // videoId
 })
 
 const lookForVideo = async (showName) => {
