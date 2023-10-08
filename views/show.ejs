@@ -14,8 +14,8 @@
                 <h4><%= showData.averageRuntime? `${showData.averageRuntime}m`: '' %></h4>
             </div>
             <div id="photo-trailer" class="row">
-                <img class="hero-image col-lg-3 col-md-12" src="https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg" alt="dsa" sizes="" srcset="">
-                <iframe class="col-lg-8 col-md-12" src="https://www.youtube.com/embed/<%= //videoId %>?si=aYWrhBgB11BjOw4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <img class="hero-image col-lg-3 col-md-12" src="<%= showData.image? showData.image.original: 'https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg'  %>" alt="dsa" sizes="" srcset="">
+                <iframe class="col-lg-8 col-md-12" src="https://www.youtube.com/embed/<%= //videoId %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <div  class="col-lg-1 col-md-12"></div>
                 <!-- videoId -->
             </div>
@@ -138,7 +138,7 @@
                                               <div class="accordion-body">
                                                 <% let filteredEpisodes = episodesData.filter(episode => episode.season == seasonsData[i].number) %>
                                                 <% for( let episode of filteredEpisodes ) { %>
-                                                    <div class="row text-center episode mb-3">
+                                                    <div class="row text-center mb-3">
                                                         <div class="col-lg-2"><%= episode.number %></div>
                                                         <div class="col-lg-5"><%= episode.name %></div>
                                                         <div class="col-lg-5 episode-airdate"><%= episode.airdate %></div>
@@ -159,7 +159,7 @@
                                               <div class="accordion-body">
                                                 <% let filteredEpisodes = episodesData.filter(episode => episode.season == seasonsData[i].number) %>
                                                 <% for( let episode of filteredEpisodes ) { %>
-                                                    <div class="row text-center">
+                                                    <div class="row text-center mb-3">
                                                         <div class="col-lg-2"><%= episode.number %></div>
                                                         <div class="col-lg-6"><%= episode.name %></div>
                                                         <div class="col-lg-4 episode-airdate"><%= episode.airdate %></div>

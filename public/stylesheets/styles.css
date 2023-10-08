@@ -1,8 +1,76 @@
+/* landing (home) page */
+#background {
+    background: url("https://images.unsplash.com/photo-1574267432553-4b4628081c31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1931&q=80") ;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: -1;
+}
+
+#landing-message {
+    font-size: 1.5em;
+}
+
+.contact-button {
+    --color: rgb(255, 251, 0);
+    /* background-color: yellow; */
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    border: 3px solid var(--color);
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
+    position: relative;
+    isolation: isolate;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.contact-button::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    inset: 0;
+    scale: 0 1;
+    transform-origin: right;
+    transition: scale 450ms;
+}
+
+.contact-button:hover {
+    color: #121212;
+    font-weight: bolder;
+}
+
+.contact-button:hover::after,
+.contact-button:focus-visible::after {
+    transform-origin: left;
+    scale: 1 1;
+}
+
+/* navbar */
 nav {
-    background-color: #3F00FF;
+    background-color: #121212;
     color: white;
     padding: 20px;
 }
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav span {
+    margin-left: 5px;
+}
+
+
 
 .navbar-brand {
     color: white;
@@ -122,8 +190,9 @@ nav {
     /* height: 100vh;
     width: 100vw; */
     background: rgb(0,0,0);
-    background: linear-gradient(320deg, rgba(0,0,0,1) 0%, rgba(255,192,0,1) 100%);
+    background: #121212;
     padding-bottom: 2rem;
+    transition: 1s ease-in-out;
 }
 
 #title-header {
