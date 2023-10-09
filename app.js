@@ -19,7 +19,7 @@ app.get('/search', async (req, res) => {
     const {searchTerm} = req.query;
     const search = await axios.get(`https://api.tvmaze.com/search/shows?q=${searchTerm}`);
     const searchResult = search.data; // This line is to avoid the JSON.stringify(value) error.
-    res.render('index', {searchResult})
+    res.render('index', {searchResult, searchTerm})
 })
 
 app.get('/show/:id', async (req, res) => {

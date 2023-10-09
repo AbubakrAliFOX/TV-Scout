@@ -2,22 +2,22 @@
 <%- include('partials/navbar') %>
 
 <div class="container mt-4 mb-5">
-    <h1>Search results for: Batman</h1>
+    <h1>Search results for: <%= searchTerm %></h1>
 </div>
 
 
 <section class="container">
-    <h3 class="search-category">Movies</h3>
-    <div class="row display-area my-3">
+    <h3 class="search-category">TV Shows</h3>
+    <div class="d-flex flex-wrap justify-content-center my-3 display-area">
         <% for(let show of searchResult) { %>
             <% if (show.show.name) { %>
-                <div class="tvCard col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 text-center">
+                <div class="tvCard my-4 mx-3 text-center">
                     <div class="element-with-overlay">
                         <img class="search-image" src="<%= show.show.image ? show.show.image.original: "https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg" %>" alt="dsa" sizes="" srcset="">
                         <div class="overlay"></div>
                         <a href="/show/<%= show.show.id %>"><svg class="search-icon" width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 6C13.7614 6 16 8.23858 16 11M16.6588 16.6549L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></a>
                     </div>
-                    <a class="show-name" href="/search/<%= show.show.id %>">
+                    <a class="show-name" href="/show/<%= show.show.id %>">
                         <h6 class="show-name"><%= show.show.name %> (<%= show.show.premiered ? show.show.premiered.slice(0,4): " " %>)</h6>
                     </a>
                 </div>

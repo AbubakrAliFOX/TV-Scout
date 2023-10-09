@@ -6,11 +6,12 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: blur(4px);
+    filter: blur(1px);
     height: 100vh;
     width: 100vw;
     position: fixed;
     z-index: -1;
+    opacity: 1;
 }
 
 
@@ -104,6 +105,18 @@ nav span {
     color: white;
 }
 
+#navbar-searchbox {
+    margin-left: 15px;
+    /* margin-right: auto; */
+    /* width: 400px; */
+}
+
+@media (max-width: 500px) {
+    #navbar-container {
+        justify-content: center;
+    }
+}
+
 .search-box {
     background-color: white;
     height: 60px;
@@ -144,33 +157,31 @@ nav span {
 
 .search-category {
     padding-left: 6px;
-    border-left: 4px solid #3F00FF;
+    border-left: 4px solid black;
     line-height: 1.9rem;
 }
 
 .display-area {
     border: 1px solid rgba(0,0,0,0.12);
     border-radius: 10px;
-    margin-left: 2px;
+    /* margin-left: 2px; */
 }
 
 
 .tvCard {
-    margin: 12px ;
+    /* margin: 12px ; */
     max-width: 225px;
-    padding: 0px;
+    /* padding: 0px; */
     /* border: 2px rgb(22, 22, 20) solid; */
     text-align: center;
-    overflow: hidden;
+    /* overflow: hidden; */
     transition: 500ms all;
-    
-
 }
 
 .element-with-overlay {
     position: relative;
-    max-width: 225px;
-    max-height: 330px;
+    /* max-width: 225px; */
+    /* max-height: 330px; */
 }
 
 .overlay {
