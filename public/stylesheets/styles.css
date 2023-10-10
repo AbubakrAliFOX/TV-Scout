@@ -81,7 +81,7 @@
 
 /* navbar */
 nav {
-    background-color: #121212;
+    background-color: rgb(24, 23, 52);
     color: white;
     padding: 20px;
 }
@@ -232,8 +232,7 @@ nav span {
 #page {
     /* height: 100vh;
     width: 100vw; */
-    background: rgb(0,0,0);
-    background: #121212;
+    background: rgb(24, 23, 52);
     padding-bottom: 2rem;
     transition: 1s ease-in-out;
 }
@@ -266,9 +265,23 @@ nav span {
 
 
 .hero-image {
-    max-width: 330px;
-    max-height: 475px;
+    /* max-width: 330px; */
+    /* height: 475px; */
     /* border-radius: 20px; */
+    margin-right: 10px;
+}
+
+@media (max-width: 789px) {
+    iframe {
+        margin-top: 2rem !important;
+        height: 40vh;
+    }
+}
+
+iframe {
+    /* width: 960px; */
+    /* height: 475px;    */
+    /* height: 100%; */
 }
 
 #more-videos {
@@ -297,16 +310,16 @@ h3 svg {
 }
 
 #cast {
-    margin-left: 0;
+    /* margin-left: 0; */
 }
 
 .cast-person {
-    display: inline-block;
-    padding: 0;
-    border: 0;
+    /* display: inline-block; */
+    /* padding: 0; */
+    /* border: 0; */
     transition: 0.3s all ease-in-out;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
+    /* border-top-left-radius: 50px; */
+    /* border-bottom-left-radius: 50px; */
 }
 
 .cast-person:hover {
@@ -314,9 +327,10 @@ h3 svg {
 }
 
 .cast-person img {
-    width: 130px;
-    height:  130px;
-    border-radius: 50px;
+    /* max-width: 130px; */
+    /* max-height:  130px; */
+    /* overflow: hidden; */
+    /* border-radius: 50px; */
 }
 
 .episodes-list {
@@ -337,6 +351,12 @@ h3 svg {
     max-width: 1000px;
     max-height: 500px;
 }
+
+
+/* #carousel {
+    width: 1000px;
+    height: 500px;
+} */
 
 .crew {
     border-top: 1px white solid;
@@ -367,13 +387,18 @@ h3 svg {
     margin-right: 10px;
 }
 
-
+.dot-2 {
+    text-align: center; /* Center-align the text within the paragraph */
+    line-height: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
 
 
 
 
 footer {
-    background-color: #333;
+    background-color: rgb(24, 23, 52);
     color: #fff;
     padding: 20px 0;
     text-align: center;

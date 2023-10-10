@@ -5,18 +5,24 @@
 <section id="page">
     <section class="container">
         <div id="hero">
-            <div id="title-header" class="d-lg-flex bd-highlight">
+            <div id="title-header" class="text-white d-lg-flex bd-highlight mb-2">
                 <h1><%= showData.name %> </h1>
-                <meter class="average-rating ms-auto" min="0" max="5" value="4.3" title="4.3 out of 5 stars">4.3 out of 5</meter>
+                <% if (showData.rating.average) { %>
+                    <div class="rating-box ms-auto d-inline-flex justify-content-center align-items-center">
+                        <h4 class="me-2 my-0"><%= showData.rating.average %>/10</h4>
+                        <svg width="35px" height="35px" viewBox="0 -0.5 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>star_favorite [#fbff00]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-99.000000, -320.000000)" fill="#fffb00"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M60.556381,172.206 C60.1080307,172.639 59.9043306,173.263 60.0093306,173.875 L60.6865811,177.791 C60.8976313,179.01 59.9211306,180 58.8133798,180 C58.5214796,180 58.2201294,179.931 57.9282291,179.779 L54.3844766,177.93 C54.1072764,177.786 53.8038262,177.714 53.499326,177.714 C53.1958758,177.714 52.8924256,177.786 52.6152254,177.93 L49.0714729,179.779 C48.7795727,179.931 48.4782224,180 48.1863222,180 C47.0785715,180 46.1020708,179.01 46.3131209,177.791 L46.9903714,173.875 C47.0953715,173.263 46.8916713,172.639 46.443321,172.206 L43.575769,169.433 C42.4480682,168.342 43.0707186,166.441 44.6289197,166.216 L48.5916225,165.645 C49.211123,165.556 49.7466233,165.17 50.0227735,164.613 L51.7951748,161.051 C52.143775,160.35 52.8220755,160 53.499326,160 C54.1776265,160 54.855927,160.35 55.2045272,161.051 L56.9769285,164.613 C57.2530787,165.17 57.7885791,165.556 58.4080795,165.645 L62.3707823,166.216 C63.9289834,166.441 64.5516338,168.342 63.423933,169.433 L60.556381,172.206 Z" id="star_favorite-[#fbff00]"> </path> </g> </g> </g> </g></svg>
+                    </div>
+                <% } %>
             </div>
-            <div class="d-flex flex-row bd-highlight mb-3">
+            <div class="d-flex flex-row bd-highlight mb-3 text-white">
                 <h4><%= showData.premiered? showData.premiered.slice(0, 4) + ' ': '' %><%= showData.ended? `- ${showData.ended.slice(0, 4)}`: '' %></h4>
+                <span class="dot-2">•</span>
                 <h4><%= showData.averageRuntime? `${showData.averageRuntime}m`: '' %></h4>
             </div>
+            <!-- d-flex flex-sm-column flex-md-row justify-content-center align-items-center -->
             <div id="photo-trailer" class="row">
-                <img class="hero-image col-lg-3 col-md-12" src="<%= showData.image? showData.image.original: 'https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg'  %>" alt="dsa" sizes="" srcset="">
-                <iframe class="col-lg-8 col-md-12" src="https://www.youtube.com/embed/<%= //videoId %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <div  class="col-lg-1 col-md-12"></div>
+                <img class="col-12 col-md-3" src="<%= showData.image? showData.image.original: 'https://t3.ftcdn.net/jpg/03/34/83/22/360_F_334832255_IMxvzYRygjd20VlSaIAFZrQWjozQH6BQ.jpg'  %>" alt="dsa" sizes="" srcset="">
+                <iframe class="col-12 col-md-9" src="https://www.youtube.com/embed/<%= //videoId %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <!-- videoId -->
             </div>
             <% if (showData.genres) { %>
@@ -65,47 +71,40 @@
     </section>
 </section>
 
-<section id="page2">
+<!-- <section id="page2"> -->
     <section class="container">
-            <section class="row">
+            <section class="row ms-0">
                 <div class="col-lg-8">
-                    <div id="cast">
+                    <section id="cast">
                         <h3>Cast <svg width="81px" height="81px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ff0000" stroke-width="2.832"></g><g id="SVGRepo_iconCarrier"> <g id="Arrow / Caret_Right_SM"> <path id="Vector" d="M11 9L14 12L11 15" stroke="#ffea00" stroke-width="1.6320000000000001" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg></h3>
-                        <div class="row">
+                        <div class="row ms-0">
                             <% for( i = 0; i < (castData.length < 5? castData.length : 5); i++) { %>
                                 <% if (castData[i].person) { %>
-                                    <div class="cast-person card col-4 mb-4">
-                                        <div class="row g-0">
-                                            <div class="col-md-4">
-                                              <img src="<%= castData[i].person.image? castData[i].person.image.medium : 'https://imagedelivery.net/5MYSbk45M80qAwecrlKzdQ/49d53747-1189-4811-d83b-4fadcb1dad00/thumbnail?v=2023082806' %>" class="img-fluid" alt="...">
-                                            </div>
-                                            <div class="col-md-8">
-                                              <div class="card-body">
-                                                <p class="card-text fw-bold"><%= castData[i].person.name %></p>
-                                                <p class="card-text"><%= castData[i].character.name %></p>
-                                              </div>
-                                            </div>
-                                          </div>                        
+                                    <div class="row cast-person text-center col-6 col-xl-4 mb-4 me-2">
+                                        <div class="col-12 col-md-4 p-0">
+                                            <img src="<%= castData[i].person.image? castData[i].person.image.medium : 'https://imagedelivery.net/5MYSbk45M80qAwecrlKzdQ/49d53747-1189-4811-d83b-4fadcb1dad00/thumbnail?v=2023082806' %>" class="mb-1 img-fluid" alt="...">
+                                        </div>
+                                        <div class="col-12 col-md-8 my-auto">
+                                            <p class="fw-bold mb-0"><%= castData[i].person.name %></p>
+                                            <p class="mb-0"><%= castData[i].character.name %></p>
+                                        </div>
                                     </div>
                                 <% } %>
                             <% } %>
                         </div>
-                    </div>
+                    </section>
                     <section id="image-gallery">
                         <h3>Image Gallery <svg width="81px" height="81px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ff0000" stroke-width="2.832"></g><g id="SVGRepo_iconCarrier"> <g id="Arrow / Caret_Right_SM"> <path id="Vector" d="M11 9L14 12L11 15" stroke="#ffea00" stroke-width="1.6320000000000001" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg></h3>
                         <div id="carousel" class="carousel slide " data-bs-ride="carousel">
                             <div class="carousel-indicators"> 
                               <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                              <% for( let i = 1; i < (imgData.length < 5? imgData.length : 5); i++ ) { %>
-                                <button type="button" data-bs-target="#carousel" data-bs-slide-to="<%= i %>" aria-label="Slide <%= i+1 %>"></button>
+                              <% for( let i = 0; i <= (imgData.length < 5? imgData.length : 5); i++ ) { %>
+                                <button type="button" data-bs-target="#carousel" data-bs-slide-to="<%= i %>" <%= i == 0 ? 'class="active" aria-current="true"': ' ' %> aria-label="Slide <%= i+1 %>"></button>
                               <% } %>
                             </div>
                             <div class="carousel-inner">
-                              <div class="carousel-item active">
-                                <img src="https://static.tvmaze.com/uploads/images/original_untouched/223/557688.jpg" class="d-block w-100" alt="...">
-                              </div>
-                              <% for( let i = 1; i < (imgData.length < 5? imgData.length : 5); i++ ) { %>
-                                <div class="carousel-item">
+                              <% for( let i = 0; i <= (imgData.length < 5? imgData.length : 5); i++ ) { %>
+                                <div class="carousel-item <%= i == 0? 'active': ' ' %>">
                                     <img src="<%= imgData[i].resolutions.original.url? imgData[i].resolutions.original.url: ' ' %>" class="d-block w-100" alt="...">
                                   </div>
                               <% } %>
@@ -176,6 +175,6 @@
                 </div>
             </section>
     </section>
-</section>
+<!-- </section> -->
 
 <%- include('partials/footer') %>
