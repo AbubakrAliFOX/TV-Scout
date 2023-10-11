@@ -71,7 +71,6 @@ const lookForVideo = async (showName) => {
       return response.data.items[0].id.videoId;
     } catch (error) {
       console.error('Error making YouTube API request:', error);
-      res.status(500).json({ error: 'Internal server error' });
     }
 };
 
