@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -43,8 +44,8 @@ app.get('/show/:id', async (req, res) => {
       }
     }
 
-    // const videoId = await lookForVideo(showData.name);
-    res.render('show', {showData, castData, imgData, crewData, seasonsData, episodesData});
+    const videoId = await lookForVideo(showData.name);
+    res.render('show', {showData, castData, imgData, crewData, seasonsData, episodesData, videoId});
     // videoId
 })
 
@@ -60,7 +61,7 @@ const lookForVideo = async (showName) => {
             part: 'snippet',
             maxResults,
             q: query,
-            key: 'AIzaSyCLv6b2Bw-1TVBqgclZpVwMRf9EHqxteaw',
+            key: process.env.YOUTUBE_KEY,
             type: 'video',
             videoEmbeddable: true
           },

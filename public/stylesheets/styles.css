@@ -81,7 +81,7 @@
 
 /* navbar */
 nav {
-    background-color: rgb(24, 23, 52);
+    background-color: rgb(9, 9, 20);
     color: white;
     padding: 20px;
 }
@@ -278,11 +278,7 @@ nav span {
     }
 }
 
-iframe {
-    /* width: 960px; */
-    /* height: 475px;    */
-    /* height: 100%; */
-}
+
 
 #more-videos {
     background-color: #333;
@@ -309,9 +305,6 @@ h3 svg {
     padding: 0;
 }
 
-#cast {
-    /* margin-left: 0; */
-}
 
 .cast-person {
     /* display: inline-block; */
@@ -326,12 +319,6 @@ h3 svg {
     background-color: #e6e6ef;
 }
 
-.cast-person img {
-    /* max-width: 130px; */
-    /* max-height:  130px; */
-    /* overflow: hidden; */
-    /* border-radius: 50px; */
-}
 
 .episodes-list {
     position: relative;
@@ -394,14 +381,25 @@ h3 svg {
     margin-left: 10px;
 }
 
+.mainPage {
+    position: relative;
+    min-height: 100vh;
+}
 
+.content-wrapper {
+    padding-bottom: 10rem;
+}
 
 
 footer {
-    background-color: rgb(24, 23, 52);
+    background-color: rgb(9, 9, 20);
     color: #fff;
     padding: 20px 0;
-    text-align: center;
+    text-align: center; 
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 
