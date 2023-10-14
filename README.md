@@ -23,7 +23,8 @@ If you have any feedback, feature requests, or encounter issues, please feel fre
 This project is licensed under the MIT License.
 
 ## Contact Me
-Email: AbubakrA.eldaw@gmail.com
-LinkedIn: 
-Portfolio: 
+- Email: AbubakrA.eldaw@gmail.com.
+- LinkedIn: https://www.linkedin.com/in/abubakr-eldaw/
+- Portfolio: (Comming Soon :)) 
+
 TV Scout is designed and developed to make TV show exploration a breeze. We hope you enjoy using it as much as we enjoyed creating it. Happy TV show hunting!
