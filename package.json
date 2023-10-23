@@ -1,5 +1,4 @@
 {
-  "homepage": "https://AbubakrAliFOX.github.io/Portfolio",
   "engines": {
     "node": "18.17.1"
   },
@@ -9,8 +8,6 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
   },
   "author": "Abubakr Ali",
   "license": "ISC",
