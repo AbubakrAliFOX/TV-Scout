@@ -7,7 +7,7 @@
   "description": "An app made for movies / tv shows search",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Abubakr Ali",
   "license": "ISC",
